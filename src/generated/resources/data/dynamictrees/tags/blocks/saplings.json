@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": [
+    "dtcroptopia:almond_sapling",
+    "dtcroptopia:apple_sapling",
+    "dtcroptopia:apricot_sapling",
+    "dtcroptopia:avocado_sapling",
+    "dtcroptopia:banana_sapling",
+    "dtcroptopia:cashew_sapling",
+    "dtcroptopia:cherry_sapling",
+    "dtcroptopia:cinnamon_sapling",
+    "dtcroptopia:coconut_sapling",
+    "dtcroptopia:date_sapling",
+    "dtcroptopia:dragonfruit_sapling",
+    "dtcroptopia:fig_sapling",
+    "dtcroptopia:grapefruit_sapling",
+    "dtcroptopia:kumquat_sapling",
+    "dtcroptopia:lemon_sapling",
+    "dtcroptopia:lime_sapling",
+    "dtcroptopia:mango_sapling",
+    "dtcroptopia:nectarine_sapling",
+    "dtcroptopia:nutmeg_sapling",
+    "dtcroptopia:orange_sapling",
+    "dtcroptopia:peach_sapling",
+    "dtcroptopia:pear_sapling",
+    "dtcroptopia:pecan_sapling",
+    "dtcroptopia:persimmon_sapling",
+    "dtcroptopia:plum_sapling",
+    "dtcroptopia:starfruit_sapling",
+    "dtcroptopia:walnut_sapling"
+  ]
+}

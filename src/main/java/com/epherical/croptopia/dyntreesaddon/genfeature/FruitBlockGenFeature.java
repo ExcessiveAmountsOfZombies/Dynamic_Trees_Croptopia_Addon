@@ -3,7 +3,6 @@ package com.epherical.croptopia.dyntreesaddon.genfeature;
 import com.epherical.croptopia.blocks.LeafCropBlock;
 import com.ferreusveritas.dynamictrees.api.GeneratesFruit;
 import com.ferreusveritas.dynamictrees.api.TreeHelper;
-import com.ferreusveritas.dynamictrees.api.configurations.ConfigurationProperty;
 import com.ferreusveritas.dynamictrees.api.network.MapSignal;
 import com.ferreusveritas.dynamictrees.blocks.branches.BranchBlock;
 import com.ferreusveritas.dynamictrees.compat.seasons.SeasonHelper;
@@ -31,8 +30,6 @@ import java.util.function.Supplier;
 @GeneratesFruit
 public class FruitBlockGenFeature extends FruitGenFeature {
 
-    public static final ConfigurationProperty<Supplier<LeafCropBlock>> FRUIT =
-            ConfigurationProperty.property("leaf_crop_block", (Class<Supplier<LeafCropBlock>>) (Class) Supplier.class);
     private final Supplier<LeafCropBlock> fruitBlock;
 
 
@@ -43,13 +40,13 @@ public class FruitBlockGenFeature extends FruitGenFeature {
 
     @Override
     protected void registerProperties() {
-        this.register(FRUIT, VERTICAL_SPREAD, QUANTITY, RAY_DISTANCE, FRUITING_RADIUS, PLACE_CHANCE);
+        this.register(VERTICAL_SPREAD, QUANTITY, RAY_DISTANCE, FRUITING_RADIUS, PLACE_CHANCE);
     }
+
 
     @Override
     public GenFeatureConfiguration createDefaultConfiguration() {
         return new GenFeatureConfiguration(this)
-                .with(FRUIT, fruitBlock)
                 .with(VERTICAL_SPREAD, 30f)
                 .with(QUANTITY, 4)
                 .with(FRUITING_RADIUS, 8)
@@ -79,6 +76,7 @@ public class FruitBlockGenFeature extends FruitGenFeature {
         if (branch != null && branch.getRadius(blockState) >= configuration.get(FRUITING_RADIUS) && context.natural()) {
             BlockPos rootPos = context.pos();
             float fruitingFactor = context.species().seasonalFruitProductionFactor(world, rootPos);
+            // todo: maybe re-implement a configurable fruiting factor?
             if (fruitingFactor > 0.3 && fruitingFactor > world.random.nextFloat()) {
                 FindEndsNode endFinder = new FindEndsNode();
                 TreeHelper.startAnalysisFromRoot(world, rootPos, new MapSignal(endFinder));
@@ -102,7 +100,7 @@ public class FruitBlockGenFeature extends FruitGenFeature {
         if (fruitPos != BlockPos.ZERO &&
                 (!enableHash || ((CoordUtils.coordHashCode(fruitPos, 0) & 3) == 0)) &&
                 world.getRandom().nextFloat() <= configuration.get(PLACE_CHANCE)) {
-            LeafCropBlock fruitBlock = configuration.get(FRUIT).get();
+            LeafCropBlock fruitBlock = this.fruitBlock.get();
             BlockState setState = fruitBlock.getStateForAge(worldGen ? 3 : 0);
             world.setBlock(fruitPos, setState, 3);
         }

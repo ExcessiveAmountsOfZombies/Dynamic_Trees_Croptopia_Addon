@@ -1,0 +1,6 @@
+{
+  "loader": "dynamictrees:root",
+  "textures": {
+    "bark": "croptopia:block/cinnamon_log"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "primitive_leaves": "minecraft:jungle_leaves",
+  "cell_kit": "dynamictrees:dark_oak",
+  "light_requirement": 12,
+  "smother": 3
+}

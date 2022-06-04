@@ -11,9 +11,9 @@
     "forest": 1.05
   },
   "perfect_biomes": { "name": "minecraft:plains" },
-  "primitive_sapling": "croptopia:apple_sapling",
+  "primitive_sapling": "croptopia:cherry_sapling",
   "features" : [
-    "dtcroptopia:fruit_crop_apple",
+    "dtcroptopia:fruit_crop_cherry",
     "bee_nest"
   ],
   "drop_creators": [

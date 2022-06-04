@@ -1,0 +1,7 @@
+{
+  "loader": "dynamictrees:branch",
+  "textures": {
+    "bark": "croptopia:block/stripped_cinnamon_log",
+    "rings": "croptopia:block/stripped_cinnamon_log_top"
+  }
+}

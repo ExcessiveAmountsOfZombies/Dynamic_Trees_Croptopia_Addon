@@ -1,9 +1,9 @@
 {
   "family": "oak",
   "generate_sapling": false,
-  "tapering": 0.3,
-  "signal_energy": 12.0,
-  "growth_rate": 1.0,
+  "tapering": 0.33,
+  "signal_energy": 11.0,
+  "growth_rate": 0.7,
   "leaves_properties": "oak",
   "environment_factors" : {
     "hot": 0.5,
@@ -11,9 +11,9 @@
     "forest": 1.05
   },
   "perfect_biomes": { "name": "minecraft:plains" },
-  "primitive_sapling": "croptopia:apple_sapling",
+  "primitive_sapling": "croptopia:apricot_sapling",
   "features" : [
-    "dtcroptopia:fruit_crop_apple",
+    "dtcroptopia:fruit_crop_apricot",
     "bee_nest"
   ],
   "drop_creators": [

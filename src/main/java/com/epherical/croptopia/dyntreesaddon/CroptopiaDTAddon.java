@@ -48,7 +48,6 @@ public class CroptopiaDTAddon {
     }
 
     public void gatherData(GatherDataEvent event) {
-        GatherDataHelper.gatherTagData(ID, event);
         Resources.MANAGER.gatherData();
         GatherDataHelper.gatherAllData(
                 ID,
