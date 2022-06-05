@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": [
+    "dtcroptopia:almond_seed",
+    "dtcroptopia:apple_seed",
+    "dtcroptopia:apricot_seed",
+    "dtcroptopia:avocado_seed",
+    "dtcroptopia:banana_seed",
+    "dtcroptopia:cashew_seed",
+    "dtcroptopia:cherry_seed",
+    "dtcroptopia:cinnamon_seed",
+    "dtcroptopia:coconut_seed",
+    "dtcroptopia:date_seed",
+    "dtcroptopia:dragonfruit_seed",
+    "dtcroptopia:fig_seed",
+    "dtcroptopia:grapefruit_seed",
+    "dtcroptopia:kumquat_seed",
+    "dtcroptopia:lemon_seed",
+    "dtcroptopia:lime_seed",
+    "dtcroptopia:mango_seed",
+    "dtcroptopia:nectarine_seed",
+    "dtcroptopia:nutmeg_seed",
+    "dtcroptopia:orange_seed",
+    "dtcroptopia:peach_seed",
+    "dtcroptopia:pear_seed",
+    "dtcroptopia:pecan_seed",
+    "dtcroptopia:persimmon_seed",
+    "dtcroptopia:plum_seed",
+    "dtcroptopia:starfruit_seed",
+    "dtcroptopia:walnut_seed"
+  ]
+}

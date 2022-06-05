@@ -1,21 +1,24 @@
 {
   "family": "jungle",
-  "generate_sapling": false,
-  "tapering": 0.2,
-  "signal_energy": 24.0,
-  "up_probability": 5,
-  "lowest_branch_height": 4,
+  "generate_seed": true,
+  "generate_sapling": true,
+  "tapering": 0.65,
+  "signal_energy": 9.0,
+  "up_probability": 100,
+  "lowest_branch_height": 5,
   "growth_rate": 0.9,
-  "leaves_properties": "oak",
-  "environment_factors" : {
+  "leaves_properties": "jungle",
+  "environment_factors": {
     "cold": 0.15,
     "dry": 0.2,
     "hot": 1.1,
     "wet": 1.1
   },
-  "perfect_biomes": { "type": "jungle" },
+  "perfect_biomes": {
+    "type": "jungle"
+  },
   "primitive_sapling": "croptopia:banana_sapling",
-  "features" : [
+  "features": [
     {
       "name": "vines",
       "properties": {
@@ -29,6 +32,7 @@
   ],
   "drop_creators": [
     "log",
-    "stick"
+    "stick",
+    "seed"
   ]
 }

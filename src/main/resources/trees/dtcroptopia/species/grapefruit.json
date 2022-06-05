@@ -1,23 +1,26 @@
 {
-  "family": "oak",
-  "generate_sapling": false,
-  "tapering": 0.3,
-  "signal_energy": 12.0,
+  "family": "jungle",
+  "generate_seed": true,
+  "generate_sapling": true,
+  "tapering": 0.4,
+  "signal_energy": 11.0,
   "growth_rate": 1.0,
-  "leaves_properties": "oak",
-  "environment_factors" : {
+  "leaves_properties": "jungle",
+  "environment_factors": {
     "hot": 0.5,
     "dry": 0.5,
     "forest": 1.05
   },
-  "perfect_biomes": { "name": "minecraft:plains" },
-  "primitive_sapling": "croptopia:apple_sapling",
-  "features" : [
-    "dtcroptopia:fruit_crop_apple",
-    "bee_nest"
+  "perfect_biomes": {
+    "name": "minecraft:plains"
+  },
+  "primitive_sapling": "croptopia:grapefruit_sapling",
+  "features": [
+    "dtcroptopia:fruit_crop_dragonfruit"
   ],
   "drop_creators": [
     "log",
-    "stick"
+    "stick",
+    "seed"
   ]
 }

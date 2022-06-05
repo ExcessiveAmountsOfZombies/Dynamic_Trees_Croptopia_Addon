@@ -1,24 +1,29 @@
 {
   "family": "dark_oak",
-  "generate_sapling": false,
-  "tapering": 0.42,
+  "generate_seed": true,
+  "generate_sapling": true,
+  "tapering": 0.48,
   "signal_energy": 24.0,
   "growth_rate": 0.75,
   "max_branch_radius": 12,
   "lowest_branch_height": 4,
   "leaves_properties": "dark_oak",
-  "environment_factors" : {
+  "growth_logic_kit": "dark_oak",
+  "environment_factors": {
     "hot": 0.5,
     "dry": 0.5,
     "forest": 1.05
   },
-  "perfect_biomes": { "name": "minecraft:plains" },
-  "primitive_sapling": "croptopia:cashew_sapling",
-  "features" : [
-    "dtcroptopia:fruit_crop_cashew"
+  "perfect_biomes": {
+    "name": "minecraft:plains"
+  },
+  "primitive_sapling": "croptopia:pecan_sapling",
+  "features": [
+    "dtcroptopia:fruit_crop_pecan"
   ],
   "drop_creators": [
     "log",
-    "stick"
+    "stick",
+    "seed"
   ]
 }

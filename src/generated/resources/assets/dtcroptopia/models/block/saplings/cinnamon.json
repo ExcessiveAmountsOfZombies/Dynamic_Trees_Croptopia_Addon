@@ -1,0 +1,8 @@
+{
+  "parent": "dynamictrees:block/smartmodel/sapling",
+  "textures": {
+    "particle": "minecraft:block/jungle_leaves",
+    "log": "croptopia:block/cinnamon_log",
+    "leaves": "minecraft:block/jungle_leaves"
+  }
+}

@@ -3,7 +3,8 @@
   "common_species": "jungle",
   "primitive_log": "croptopia:cinnamon_log",
   "primitive_stripped_log": "croptopia:stripped_cinnamon_log",
-  "max_branch_radius": 18,
+  "surface_root": "croptopia:cinnamon_log",
   "generate_surface_root": true,
+  "max_branch_radius": 8,
   "max_signal_depth": 48
 }
