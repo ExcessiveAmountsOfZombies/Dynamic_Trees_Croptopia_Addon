@@ -9,6 +9,7 @@ import com.ferreusveritas.dynamictrees.api.GatherDataHelper;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryEvent;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryHandler;
 import com.ferreusveritas.dynamictrees.api.registry.TypeRegistryEvent;
+import com.ferreusveritas.dynamictrees.blocks.branches.BranchBlock;
 import com.ferreusveritas.dynamictrees.blocks.leaves.LeavesProperties;
 import com.ferreusveritas.dynamictrees.blocks.rootyblocks.SoilProperties;
 import com.ferreusveritas.dynamictrees.resources.Resources;
@@ -17,10 +18,12 @@ import com.ferreusveritas.dynamictrees.systems.genfeatures.GenFeature;
 import com.ferreusveritas.dynamictrees.trees.Family;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -69,6 +72,20 @@ public class CroptopiaDTAddon {
     public void onHarvest(HarvestEvent event) {
         if (event.getCurrentState().getBlock() instanceof LeafCropBlock) {
             event.setTurnedState(Blocks.AIR.defaultBlockState());
+        }
+    }
+
+    @SubscribeEvent
+    public void onInteractionWithTool(BlockEvent.BlockToolModificationEvent event) {
+        if (!event.isSimulated() && event.getPlayer() != null) {
+            BlockState state = event.getState();
+            if (state.getBlock() instanceof BranchBlock branchBlock) {
+                branchBlock.getFamily().getPrimitiveLog().ifPresent(block -> {
+                    if (state.is(Content.CINNAMON.getLog()) || state.is(Content.CINNAMON.getWood())) {
+                        Block.popResource(event.getPlayer().level, event.getPos(), new ItemStack(Content.CINNAMON));
+                    }
+                });
+            }
         }
     }
 
