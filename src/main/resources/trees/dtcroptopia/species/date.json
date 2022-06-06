@@ -11,7 +11,7 @@
   "environment_factors": {
     "cold": 0.15,
     "dry": 0.2,
-    "hot": 1.1,
+    "hot": 0.75,
     "wet": 1.1
   },
   "perfect_biomes": {

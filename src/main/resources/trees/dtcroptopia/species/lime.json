@@ -7,16 +7,16 @@
   "growth_rate": 1.0,
   "leaves_properties": "oak",
   "environment_factors": {
-    "hot": 0.5,
-    "dry": 0.5,
-    "forest": 1.05
+    "cold": 0.55,
+    "hot": 0.75,
+    "dry": 0.25
   },
   "perfect_biomes": {
-    "name": "minecraft:plains"
+    "type": "forest"
   },
-  "primitive_sapling": "croptopia:apple_sapling",
+  "primitive_sapling": "croptopia:lime_sapling",
   "features": [
-    "dtcroptopia:fruit_crop_apple",
+    "dtcroptopia:fruit_crop_lime",
     "bee_nest"
   ],
   "drop_creators": [

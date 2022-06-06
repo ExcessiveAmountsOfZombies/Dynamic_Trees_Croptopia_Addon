@@ -9,12 +9,14 @@
   "lowest_branch_height": 4,
   "leaves_properties": "dark_oak",
   "environment_factors": {
+    "cold": 0.75,
     "hot": 0.5,
-    "dry": 0.5,
-    "forest": 1.05
+    "dry": 0.25,
+    "mushroom": 1.0
   },
   "perfect_biomes": {
-    "name": "minecraft:plains"
+    "type": "spooky",
+    "name": "minecraft:.*"
   },
   "primitive_sapling": "croptopia:cashew_sapling",
   "features": [

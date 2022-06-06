@@ -7,12 +7,12 @@
   "growth_rate": 1.0,
   "leaves_properties": "oak",
   "environment_factors": {
-    "hot": 0.5,
-    "dry": 0.5,
-    "forest": 1.05
+    "cold": 0.75,
+    "hot": 0.75,
+    "dry": 0.25
   },
   "perfect_biomes": {
-    "name": "minecraft:plains"
+    "type": "forest"
   },
   "primitive_sapling": "croptopia:cherry_sapling",
   "features": [

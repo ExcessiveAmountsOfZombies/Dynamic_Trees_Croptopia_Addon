@@ -10,12 +10,13 @@
   "growth_logic_kit": "dark_oak",
   "leaves_properties": "jungle",
   "environment_factors": {
+    "cold": 0.15,
+    "dry": 0.2,
     "hot": 0.5,
-    "dry": 0.5,
-    "forest": 1.05
+    "wet": 1.1
   },
   "perfect_biomes": {
-    "name": "minecraft:plains"
+    "type": "jungle"
   },
   "primitive_sapling": "croptopia:mango_sapling",
   "features": [

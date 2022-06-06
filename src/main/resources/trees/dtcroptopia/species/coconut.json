@@ -2,7 +2,7 @@
   "family": "jungle",
   "generate_seed": true,
   "generate_sapling": true,
-  "tapering": 0.65,
+  "tapering": 0.55,
   "signal_energy": 10.0,
   "up_probability": 100,
   "lowest_branch_height": 4,
@@ -18,11 +18,11 @@
   "environment_factors": {
     "cold": 0.15,
     "dry": 1.0,
-    "hot": 1.1,
+    "hot": 0.75,
     "wet": 1.3
   },
   "perfect_biomes": {
-    "name": "minecraft:*"
+    "type": "jungle"
   },
   "primitive_sapling": "croptopia:coconut_sapling",
   "features": [

@@ -14,7 +14,10 @@
     "mushroom": 1.0
   },
   "perfect_biomes": {
-    "name": "minecraft:dark_forest"
+    "perfect_biomes": {
+      "type": "spooky",
+      "name": "minecraft:.*"
+    }
   },
   "primitive_sapling": "croptopia:almond_sapling",
   "features": [

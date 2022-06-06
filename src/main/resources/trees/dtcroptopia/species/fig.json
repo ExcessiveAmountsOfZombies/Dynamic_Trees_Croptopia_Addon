@@ -13,7 +13,7 @@
     "forest": 1.05
   },
   "perfect_biomes": {
-    "name": "minecraft:plains"
+    "type": "jungle"
   },
   "primitive_sapling": "croptopia:fig_sapling",
   "features": [
