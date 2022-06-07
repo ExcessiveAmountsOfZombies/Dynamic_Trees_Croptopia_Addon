@@ -1,13 +1,16 @@
-package com.epherical.croptopia.dyntreesaddon.genfeature;
+package com.epherical.croptopia.dyntreesaddon;
 
 import com.epherical.croptopia.blocks.LeafCropBlock;
+import com.epherical.croptopia.dyntreesaddon.drops.CinnamonDropCreator;
+import com.epherical.croptopia.dyntreesaddon.genfeature.FruitBlockGenFeature;
 import com.epherical.croptopia.register.Content;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryEvent;
+import com.ferreusveritas.dynamictrees.systems.dropcreators.DropCreator;
 import com.ferreusveritas.dynamictrees.systems.genfeatures.GenFeature;
 
 import static com.epherical.croptopia.dyntreesaddon.CroptopiaDTAddon.reg;
 
-public class GenFeatures {
+public class TreeRegistry {
 
     public static final GenFeature ALMOND_TREE = new FruitBlockGenFeature(reg("fruit_crop_almond"), () -> (LeafCropBlock) Content.ALMOND.asBlock());
     public static final GenFeature APPLE_TREE = new FruitBlockGenFeature(reg("fruit_crop_apple"), () -> (LeafCropBlock) Content.APPLE.asBlock());
@@ -36,11 +39,17 @@ public class GenFeatures {
     public static final GenFeature STARFRUIT_TREE = new FruitBlockGenFeature(reg("fruit_crop_starfruit"), () -> (LeafCropBlock) Content.STARFRUIT.asBlock());
     public static final GenFeature WALNUT_TREE = new FruitBlockGenFeature(reg("fruit_crop_walnut"), () -> (LeafCropBlock) Content.WALNUT.asBlock());
 
+    public static final DropCreator CINNAMON = new CinnamonDropCreator(reg("cinnamon"));
+
 
     public static void registerGenFeatures(RegistryEvent<GenFeature> event) {
         event.getRegistry().registerAll(ALMOND_TREE, APPLE_TREE, APRICOT_TREE, AVOCADO_TREE, BANANA_TREE, CASHEW_TREE, CHERRY_TREE, COCONUT_TREE,
                 DATE_TREE, DRAGONFRUIT_TREE, FIG_TREE, GRAPEFRUIT_TREE, KUMQUAT_TREE, LEMON_TREE, LIME_TREE, MANGO_TREE, NECTARINE_TREE, NUTMEG_TREE,
                 ORANGE_TREE, PEACH_TREE, PEAR_TREE, PECAN_TREE, PERSIMMON_TREE, PLUM_TREE, STARFRUIT_TREE, WALNUT_TREE);
+    }
+
+    public static void registerDropCreator(RegistryEvent<DropCreator> event) {
+        event.getRegistry().registerAll(CINNAMON);
     }
 
 }

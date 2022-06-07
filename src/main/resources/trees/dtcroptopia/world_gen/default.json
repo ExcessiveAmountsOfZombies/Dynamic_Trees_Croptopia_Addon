@@ -1,0 +1,99 @@
+[
+  {
+    "select": {
+      "name": "minecraft:.*plains"
+    },
+    "apply": {
+      "species": {
+        "method": "splice_before",
+        "random": {
+          "dtcroptopia:orange": 1,
+          "dtcroptopia:apple": 1,
+          "dtcroptopia:peach": 1,
+          "...": 85
+        }
+      }
+    }
+  },
+  {
+    "select": {
+      "type": "forest",
+      "NOT": {
+        "name": "minecraft:*.birch.*",
+        "AND": {
+          "type": "spooky"
+        }
+      },
+      "name": "minecraft:.*forest.*"
+    },
+    "apply": {
+      "species": {
+        "method": "splice_before",
+        "random": {
+          "dtcroptopia:orange": 1,
+          "dtcroptopia:plum": 1,
+          "dtcroptopia:apricot": 1,
+          "dtcroptopia:persimmon": 1,
+          "dtcroptopia:avocado": 1,
+          "dtcroptopia:pear": 1,
+          "dtcroptopia:starfruit": 1,
+          "dtcroptopia:nectarine": 1,
+          "dtcroptopia:lemon": 1,
+          "dtcroptopia:cherry": 1,
+          "dtcroptopia:lime": 1,
+          "...": 85
+        }
+      }
+    }
+  },
+  {
+    "select": {
+      "name": "minecraft:.*jungle.*"
+    },
+    "apply": {
+      "species": {
+        "method": "splice_before",
+        "random": {
+          "dtcroptopia:dragonfruit": 1,
+          "dtcroptopia:banana": 1,
+          "dtcroptopia:date": 1,
+          "dtcroptopia:mango": 1,
+          "dtcroptopia:coconut": 1,
+          "dtcroptopia:nutmeg": 1,
+          "dtcroptopia:fig": 1,
+          "dtcroptopia:cinnamon": 1,
+          "dtcroptopia:grapefruit": 1,
+          "...": 85
+        }
+      }
+    }
+  },
+  {
+    "select": {
+      "type": "spooky",
+      "name": "minecraft:.*"
+    },
+    "apply": {
+      "species": {
+        "method": "splice_before",
+        "random": {
+          "dtcroptopia:cashew": 1,
+          "dtcroptopia:almond": 1,
+          "dtcroptopia:pecan": 1,
+          "dtcroptopia:walnut": 1,
+          "...": 86
+        }
+      }
+    }
+  },
+  {
+    "select": {
+      "name": "minecraft:.*",
+      "type": "nether"
+    },
+    "apply": {
+      "subterranean": true,
+      "chance": 0.4
+    }
+  }
+]

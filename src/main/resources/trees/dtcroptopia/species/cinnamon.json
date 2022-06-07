@@ -31,6 +31,10 @@
   "drop_creators": [
     "log",
     "stick",
-    "seed"
+    "seed",
+    {
+      "name": "dtcroptopia:cinnamon",
+      "max_count": 6
+    }
   ]
 }

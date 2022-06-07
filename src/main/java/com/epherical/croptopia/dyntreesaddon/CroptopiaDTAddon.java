@@ -1,27 +1,19 @@
 package com.epherical.croptopia.dyntreesaddon;
 
 import com.epherical.croptopia.blocks.LeafCropBlock;
-import com.epherical.croptopia.dyntreesaddon.genfeature.FruitBlockGenFeature;
-import com.epherical.croptopia.dyntreesaddon.genfeature.GenFeatures;
 import com.epherical.croptopia.events.HarvestEvent;
-import com.epherical.croptopia.register.Content;
 import com.ferreusveritas.dynamictrees.api.GatherDataHelper;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryEvent;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryHandler;
-import com.ferreusveritas.dynamictrees.api.registry.TypeRegistryEvent;
-import com.ferreusveritas.dynamictrees.blocks.branches.BranchBlock;
 import com.ferreusveritas.dynamictrees.blocks.leaves.LeavesProperties;
 import com.ferreusveritas.dynamictrees.blocks.rootyblocks.SoilProperties;
 import com.ferreusveritas.dynamictrees.resources.Resources;
-import com.ferreusveritas.dynamictrees.systems.genfeatures.FruitGenFeature;
+import com.ferreusveritas.dynamictrees.systems.dropcreators.DropCreator;
 import com.ferreusveritas.dynamictrees.systems.genfeatures.GenFeature;
 import com.ferreusveritas.dynamictrees.trees.Family;
 import com.ferreusveritas.dynamictrees.trees.Species;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -77,7 +69,8 @@ public class CroptopiaDTAddon {
 
     @SubscribeEvent
     public void onInteractionWithTool(BlockEvent.BlockToolModificationEvent event) {
-        if (!event.isSimulated() && event.getPlayer() != null) {
+        // this is never fired.
+        /*if (!event.isSimulated() && event.getPlayer() != null) {
             BlockState state = event.getState();
             if (state.getBlock() instanceof BranchBlock branchBlock) {
                 branchBlock.getFamily().getPrimitiveLog().ifPresent(block -> {
@@ -86,7 +79,7 @@ public class CroptopiaDTAddon {
                     }
                 });
             }
-        }
+        }*/
     }
 
     public static ResourceLocation reg(String key) {
@@ -97,7 +90,12 @@ public class CroptopiaDTAddon {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void registerGenFeatures(RegistryEvent<GenFeature> event) {
-            GenFeatures.registerGenFeatures(event);
+            TreeRegistry.registerGenFeatures(event);
+        }
+
+        @SubscribeEvent
+        public static void registerDrops(RegistryEvent<DropCreator> event) {
+            TreeRegistry.registerDropCreator(event);
         }
 
     }
