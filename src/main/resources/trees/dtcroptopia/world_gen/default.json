@@ -10,7 +10,7 @@
           "dtcroptopia:orange": 1,
           "dtcroptopia:apple": 1,
           "dtcroptopia:peach": 1,
-          "...": 85
+          "...": 7
         }
       }
     }
@@ -20,11 +20,8 @@
       "type": "forest",
       "NOT": {
         "name": "minecraft:*.birch.*",
-        "AND": {
-          "type": "spooky"
-        }
-      },
-      "name": "minecraft:.*forest.*"
+        "type": "spooky"
+      }
     },
     "apply": {
       "species": {
@@ -81,9 +78,18 @@
           "dtcroptopia:almond": 1,
           "dtcroptopia:pecan": 1,
           "dtcroptopia:walnut": 1,
-          "...": 86
+          "...": 56
         }
-      }
+      },
+      "density": {
+        "math": {
+          "div": [
+            "noise",
+            2.0
+          ]
+        }
+      },
+      "multipass": true
     }
   },
   {
