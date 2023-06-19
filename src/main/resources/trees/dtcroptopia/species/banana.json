@@ -29,10 +29,5 @@
     "cocoa",
     "undergrowth",
     "dtcroptopia:fruit_crop_banana"
-  ],
-  "drop_creators": [
-    "log",
-    "stick",
-    "seed"
   ]
 }

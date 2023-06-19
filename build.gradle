@@ -91,7 +91,7 @@ repositories {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.18.2-40.1.31'
     implementation (fg.deobf("com.epherical:croptopia:1.18.2"))
-    implementation (fg.deobf("com.ferreusveritas:dyntrees-alpha1:1.18.2"))
+    implementation (fg.deobf("com.ferreusveritas:DynamicTreesRelease:1.18.2"))
     runtimeOnly(fg.deobf("curse.maven:cc-tweaked-282001:3770724"))
 
     // Real mod deobf dependency examples - these get remapped to your current mappings

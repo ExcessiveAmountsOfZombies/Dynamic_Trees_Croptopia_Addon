@@ -1,19 +1,18 @@
 package com.epherical.croptopia.dyntreesaddon.genfeature;
 
 import com.epherical.croptopia.blocks.LeafCropBlock;
-import com.ferreusveritas.dynamictrees.api.GeneratesFruit;
 import com.ferreusveritas.dynamictrees.api.TreeHelper;
 import com.ferreusveritas.dynamictrees.api.network.MapSignal;
-import com.ferreusveritas.dynamictrees.blocks.branches.BranchBlock;
-import com.ferreusveritas.dynamictrees.compat.seasons.SeasonHelper;
-import com.ferreusveritas.dynamictrees.systems.genfeatures.FruitGenFeature;
-import com.ferreusveritas.dynamictrees.systems.genfeatures.GenFeatureConfiguration;
-import com.ferreusveritas.dynamictrees.systems.genfeatures.context.PostGenerationContext;
-import com.ferreusveritas.dynamictrees.systems.genfeatures.context.PostGrowContext;
-import com.ferreusveritas.dynamictrees.systems.nodemappers.FindEndsNode;
-import com.ferreusveritas.dynamictrees.trees.Family;
-import com.ferreusveritas.dynamictrees.trees.Species;
+import com.ferreusveritas.dynamictrees.block.branch.BranchBlock;
+import com.ferreusveritas.dynamictrees.compat.season.SeasonHelper;
+import com.ferreusveritas.dynamictrees.systems.genfeature.FruitGenFeature;
+import com.ferreusveritas.dynamictrees.systems.genfeature.GenFeatureConfiguration;
+import com.ferreusveritas.dynamictrees.systems.genfeature.context.PostGenerationContext;
+import com.ferreusveritas.dynamictrees.systems.genfeature.context.PostGrowContext;
+import com.ferreusveritas.dynamictrees.systems.nodemapper.FindEndsNode;
+import com.ferreusveritas.dynamictrees.tree.species.Species;
 import com.ferreusveritas.dynamictrees.util.CoordUtils;
+import com.ferreusveritas.dynamictrees.util.LevelContext;
 import com.ferreusveritas.dynamictrees.util.SafeChunkBounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -28,7 +27,6 @@ import java.util.function.Supplier;
  * Most of this class is copied from here
  * https://github.com/DynamicTreesTeam/DynamicTrees/blob/develop/1.18.2/src/main/java/com/ferreusveritas/dynamictrees/systems/genfeatures/FruitGenFeature.java
  */
-@GeneratesFruit
 public class FruitBlockGenFeature extends FruitGenFeature {
 
     private final Supplier<LeafCropBlock> fruitBlock;
@@ -63,7 +61,7 @@ public class FruitBlockGenFeature extends FruitGenFeature {
 
             for(int i = 0; i < qty; ++i) {
                 BlockPos endPoint = context.endPoints().get(context.random().nextInt(context.endPoints().size()));
-                this.addFruit(configuration, context.world(), context.species(), context.pos().above(), endPoint, true, false, context.bounds(), context.seasonValue());
+                this.addFruit(configuration, context.level(), context.species(), context.pos().above(), endPoint, true, false, context.bounds(), context.seasonValue());
             }
 
             return true;
@@ -71,22 +69,23 @@ public class FruitBlockGenFeature extends FruitGenFeature {
     }
 
     protected boolean postGrow(GenFeatureConfiguration configuration, PostGrowContext context) {
-        Level world = context.world();
-        BlockState blockState = world.getBlockState(context.treePos());
+
+        LevelContext world = context.levelContext();
+        BlockState blockState = world.accessor().getBlockState(context.treePos());
         BranchBlock branch = TreeHelper.getBranch(blockState);
         if (branch != null && branch.getRadius(blockState) >= configuration.get(FRUITING_RADIUS) && context.natural()) {
             BlockPos rootPos = context.pos();
             float fruitingFactor = context.species().seasonalFruitProductionFactor(world, rootPos);
             // todo: maybe re-implement a configurable fruiting factor?
-            if (fruitingFactor > 0.3 && fruitingFactor > world.random.nextFloat()) {
+            if (fruitingFactor > 0.3 && fruitingFactor > world.accessor().getRandom().nextFloat()) {
                 FindEndsNode endFinder = new FindEndsNode();
-                TreeHelper.startAnalysisFromRoot(world, rootPos, new MapSignal(endFinder));
+                TreeHelper.startAnalysisFromRoot(world.accessor(), rootPos, new MapSignal(endFinder));
                 List<BlockPos> endPoints = endFinder.getEnds();
                 int qty = configuration.get(QUANTITY);
                 if (!endPoints.isEmpty()) {
                     for(int i = 0; i < qty; ++i) {
-                        BlockPos endPoint = endPoints.get(world.random.nextInt(endPoints.size()));
-                        this.addFruit(configuration, world, context.species(), rootPos.above(), endPoint, false, true,
+                        BlockPos endPoint = endPoints.get(world.accessor().getRandom().nextInt(endPoints.size()));
+                        this.addFruit(configuration, world.accessor(), context.species(), rootPos.above(), endPoint, false, true,
                                 SafeChunkBounds.ANY, SeasonHelper.getSeasonValue(world, rootPos));
                     }
                 }

@@ -18,10 +18,5 @@
   "primitive_sapling": "croptopia:fig_sapling",
   "features": [
     "dtcroptopia:fruit_crop_fig"
-  ],
-  "drop_creators": [
-    "log",
-    "stick",
-    "seed"
   ]
 }

@@ -5,13 +5,12 @@ import com.epherical.croptopia.events.HarvestEvent;
 import com.ferreusveritas.dynamictrees.api.GatherDataHelper;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryEvent;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryHandler;
-import com.ferreusveritas.dynamictrees.blocks.leaves.LeavesProperties;
-import com.ferreusveritas.dynamictrees.blocks.rootyblocks.SoilProperties;
+import com.ferreusveritas.dynamictrees.block.leaves.LeavesProperties;
+import com.ferreusveritas.dynamictrees.block.rooty.SoilProperties;
 import com.ferreusveritas.dynamictrees.resources.Resources;
-import com.ferreusveritas.dynamictrees.systems.dropcreators.DropCreator;
-import com.ferreusveritas.dynamictrees.systems.genfeatures.GenFeature;
-import com.ferreusveritas.dynamictrees.trees.Family;
-import com.ferreusveritas.dynamictrees.trees.Species;
+import com.ferreusveritas.dynamictrees.systems.genfeature.GenFeature;
+import com.ferreusveritas.dynamictrees.tree.family.Family;
+import com.ferreusveritas.dynamictrees.tree.species.Species;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -93,10 +92,10 @@ public class CroptopiaDTAddon {
             TreeRegistry.registerGenFeatures(event);
         }
 
-        @SubscribeEvent
+        /*@SubscribeEvent
         public static void registerDrops(RegistryEvent<DropCreator> event) {
             TreeRegistry.registerDropCreator(event);
-        }
+        }*/
 
     }
 }

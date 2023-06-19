@@ -18,10 +18,5 @@
   "features": [
     "dtcroptopia:fruit_crop_peach",
     "bee_nest"
-  ],
-  "drop_creators": [
-    "log",
-    "stick",
-    "seed"
   ]
 }

@@ -19,10 +19,5 @@
   "primitive_sapling": "croptopia:avocado_sapling",
   "features": [
     "dtcroptopia:fruit_crop_avocado"
-  ],
-  "drop_creators": [
-    "log",
-    "stick",
-    "seed"
   ]
 }

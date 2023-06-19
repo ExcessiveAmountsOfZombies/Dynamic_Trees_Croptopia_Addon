@@ -29,10 +29,5 @@
     "cocoa",
     "undergrowth",
     "dtcroptopia:fruit_crop_kumquat"
-  ],
-  "drop_creators": [
-    "log",
-    "stick",
-    "seed"
   ]
 }

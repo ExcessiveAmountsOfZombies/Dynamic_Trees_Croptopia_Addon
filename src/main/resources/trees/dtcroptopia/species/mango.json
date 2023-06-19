@@ -21,10 +21,5 @@
   "primitive_sapling": "croptopia:mango_sapling",
   "features": [
     "dtcroptopia:fruit_crop_mango"
-  ],
-  "drop_creators": [
-    "log",
-    "stick",
-    "seed"
   ]
 }

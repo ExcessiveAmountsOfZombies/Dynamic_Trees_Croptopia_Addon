@@ -21,10 +21,5 @@
   "primitive_sapling": "croptopia:nutmeg_sapling",
   "features": [
     "dtcroptopia:fruit_crop_nutmeg"
-  ],
-  "drop_creators": [
-    "log",
-    "stick",
-    "seed"
   ]
 }

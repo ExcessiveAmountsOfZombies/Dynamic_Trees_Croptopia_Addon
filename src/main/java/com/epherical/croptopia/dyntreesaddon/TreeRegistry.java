@@ -1,12 +1,10 @@
 package com.epherical.croptopia.dyntreesaddon;
 
 import com.epherical.croptopia.blocks.LeafCropBlock;
-import com.epherical.croptopia.dyntreesaddon.drops.CinnamonDropCreator;
 import com.epherical.croptopia.dyntreesaddon.genfeature.FruitBlockGenFeature;
 import com.epherical.croptopia.register.Content;
 import com.ferreusveritas.dynamictrees.api.registry.RegistryEvent;
-import com.ferreusveritas.dynamictrees.systems.dropcreators.DropCreator;
-import com.ferreusveritas.dynamictrees.systems.genfeatures.GenFeature;
+import com.ferreusveritas.dynamictrees.systems.genfeature.GenFeature;
 
 import static com.epherical.croptopia.dyntreesaddon.CroptopiaDTAddon.reg;
 
@@ -39,7 +37,7 @@ public class TreeRegistry {
     public static final GenFeature STARFRUIT_TREE = new FruitBlockGenFeature(reg("fruit_crop_starfruit"), () -> (LeafCropBlock) Content.STARFRUIT.asBlock());
     public static final GenFeature WALNUT_TREE = new FruitBlockGenFeature(reg("fruit_crop_walnut"), () -> (LeafCropBlock) Content.WALNUT.asBlock());
 
-    public static final DropCreator CINNAMON = new CinnamonDropCreator(reg("cinnamon"));
+    //public static final DropCreator CINNAMON = new CinnamonDropCreator(reg("cinnamon"));
 
 
     public static void registerGenFeatures(RegistryEvent<GenFeature> event) {
@@ -48,8 +46,8 @@ public class TreeRegistry {
                 ORANGE_TREE, PEACH_TREE, PEAR_TREE, PECAN_TREE, PERSIMMON_TREE, PLUM_TREE, STARFRUIT_TREE, WALNUT_TREE);
     }
 
-    public static void registerDropCreator(RegistryEvent<DropCreator> event) {
+    /*public static void registerDropCreator(RegistryEvent<DropCreator> event) {
         event.getRegistry().registerAll(CINNAMON);
-    }
+    }*/
 
 }

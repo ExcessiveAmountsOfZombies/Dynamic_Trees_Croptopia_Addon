@@ -21,10 +21,5 @@
   "primitive_sapling": "croptopia:cashew_sapling",
   "features": [
     "dtcroptopia:fruit_crop_cashew"
-  ],
-  "drop_creators": [
-    "log",
-    "stick",
-    "seed"
   ]
 }
